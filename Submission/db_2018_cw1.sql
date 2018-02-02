@@ -1,7 +1,8 @@
 
 -- Q1 returns (name,father,mother)
 
-; 
+SELECT name,father,mother
+FROM person;
 
 -- Q2 returns (name)
 
@@ -21,7 +22,7 @@
 
 -- Q6 returns (house,seventeenth,eighteenth,nineteenth,twentieth)
 
-; 
+;
 
 -- Q7 returns (father,child,born)
 
@@ -31,3 +32,4 @@
 
 ;
 
+-- psql -h db.doc.ic.ac.uk -d family_history -U lab -W -f db_2018_cw1.sql
