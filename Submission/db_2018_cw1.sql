@@ -9,7 +9,7 @@ AND       child.dod IN (SELECT      child.dod
                         ON          father.name = child.father
                         WHERE       child.dod < father.dod)
 OR        child.dod IN (SELECT      child.dod
-                        FROM        person AS mother JOIN person AS child
+                         FROM        person AS mother JOIN person AS child
                         ON          mother.name = child.mother
                         WHERE       child.dod < mother.dod)
 ORDER BY  name;
@@ -54,7 +54,15 @@ ORDER BY  accession;
 
 -- Q5 returns (first_name,popularity)
 
-;
+SELECT    CASE
+          WHEN LENGTH(SUBSTRING(name FROM 1 FOR POSITION(' ' IN name))) = 0
+          THEN name
+          ELSE SUBSTRING(name FROM 1 FOR POSITION(' ' IN name))
+          END AS first_name,
+          COUNT(*) AS popularity
+FROM      person
+GROUP BY  first_name HAVING COUNT(*) > 1
+ORDER BY  popularity DESC;
 
 -- Q6 returns (house,seventeenth,eighteenth,nineteenth,twentieth)
 
