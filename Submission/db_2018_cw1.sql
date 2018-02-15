@@ -32,34 +32,32 @@
 -- FROM            ( SELECT   person.name,monarch.house,person.dod,monarch.accession
 --                   FROM     person JOIN monarch
 --                   ON       person.name = monarch.name
---                   WHERE    monarch.house IS NOT NULL
 --                 ) AS old JOIN monarch AS new
--- ON        new.house = old.house
--- WHERE     new.accession > old.accession
--- AND       new.accession < old.dod
+-- ON        new.accession > old.accession
+-- WHERE     new.accession < old.dod
 -- ORDER BY  name;
 
 -- -- Q4 returns (house,name,accession)
 
--- SELECT    original.house,original.name,original.accession
--- FROM      monarch AS original
--- WHERE     original.accession <= ALL ( SELECT new.accession
+-- SELECT    house,name,accession
+-- FROM      monarch
+-- WHERE     accession <= ALL ( SELECT new.accession
 --                                       FROM   monarch AS new
---                                       WHERE  new.house = original.house)
--- AND       original.house IS NOT NULL
+--                                       WHERE  new.house = monarch.house)
+-- AND       house IS NOT NULL
 -- ORDER BY  accession;
 
 -- -- Q5 returns (first_name,popularity)
---
--- SELECT    CASE
---           WHEN LENGTH(SUBSTRING(name FROM 1 FOR POSITION(' ' IN name))) = 0
---           THEN name
---           ELSE SUBSTRING(name FROM 1 FOR POSITION(' ' IN name))
---           END AS first_name,
---           COUNT(*) AS popularity
--- FROM      person
+
+-- SELECT    first_name, COUNT(first_name) AS popularity
+-- FROM      (SELECT   CASE
+--                     WHEN LENGTH(SUBSTRING(name FROM 1 FOR POSITION(' ' IN name))) = 0
+--                     THEN name
+--                     ELSE SUBSTRING(name FROM 1 FOR POSITION(' ' IN name) - 1)
+--                     END AS first_name
+--                     FROM person) AS new
 -- GROUP BY  first_name
--- HAVING    COUNT(*) > 1
+-- HAVING    COUNT(first_name) > 1
 -- ORDER BY  popularity DESC, first_name;
 
 -- -- Q6 returns (house,seventeenth,eighteenth,nineteenth,twentieth)
@@ -76,7 +74,7 @@
 
 -- Q7 returns (father,child,born)
 
--- SELECT      original.name AS father, new.name AS child, new.dob AS dob,
+-- SELECT      original.name AS father, new.name AS child,
 --             CASE
 --             WHEN new.name IS NULL
 --             THEN null
@@ -90,12 +88,11 @@
 -- Q8 returns (monarch,prime_minister)
 
 -- SELECT DISTINCT monarch_list.name AS monarch, prime_minister.name AS prime_minister
--- FROM            (SELECT        original.name, MIN(original.accession) AS start_date, MIN(new.accession) AS end_date
---                 FROM          monarch AS original JOIN monarch AS new
---                 ON            original.house = new.house
---                 WHERE         original.accession >= new.accession IS FALSE
+-- FROM            (SELECT       original.name, original.accession AS start_date, MIN(new.accession) AS end_date
+--                 FROM          monarch AS original LEFT JOIN monarch AS new
+--                 ON            original.accession >= new.accession IS FALSE
 --                 GROUP BY      original.name
 --                 ORDER BY      MIN(original.accession)) AS monarch_list CROSS JOIN prime_minister
 -- WHERE           prime_minister.entry > monarch_list.start_date IS TRUE
--- AND             prime_minister.entry < monarch_list.end_date IS TRUE
+-- AND             (prime_minister.entry < monarch_list.end_date IS TRUE OR monarch_list.end_date IS NULL)
 -- ORDER BY        monarch, prime_minister;
