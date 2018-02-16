@@ -2,15 +2,15 @@
 
 SELECT    name,father,mother
 FROM      person
-WHERE     dod IS NOT NULL
-AND       dod IN (SELECT  child.dod
-                  FROM    person AS father JOIN person AS child
-                  ON      father.name = child.father
-                  WHERE   child.dod < father.dod)
-AND       dod IN (SELECT  child.dod
-                  FROM    person AS mother JOIN person AS child
-                  ON      mother.name = child.mother
-                  WHERE   child.dod < mother.dod)
+-- Find children who have a date of death before both their mother and father
+WHERE     name IN   (SELECT  child.name
+                     FROM    person AS father JOIN person AS child
+                     ON      father.name = child.father
+                     WHERE   child.dod < father.dod)
+AND       name IN   (SELECT  child.name
+                     FROM    person AS mother JOIN person AS child
+                     ON      mother.name = child.mother
+                     WHERE   child.dod < mother.dod)
 ORDER BY  name;
 
 -- -- Q2 returns (name)
@@ -59,6 +59,8 @@ ORDER BY  popularity DESC, first_name;
 -- -- Q6 returns (house,seventeenth,eighteenth,nineteenth,twentieth)
 
 SELECT      house,
+            -- Simply look for year patterns matching the corresponding century
+            -- Use '%' to match any number (including zero) of characters
             COUNT(CASE WHEN accession::TEXT LIKE '16%' then accession END) AS seventeeth,
             COUNT(CASE WHEN accession::TEXT LIKE '17%' then accession END) AS eighteenth,
             COUNT(CASE WHEN accession::TEXT LIKE '18%' then accession END) AS nineteenth,
