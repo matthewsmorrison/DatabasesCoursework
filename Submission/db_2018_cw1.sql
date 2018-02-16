@@ -1,4 +1,4 @@
--- -- Q1 returns (name,father,mother)
+-- Q1 returns (name,father,mother)
 
 SELECT    name,father,mother
 FROM      person
@@ -13,7 +13,7 @@ AND       name IN   (SELECT  child.name
                      WHERE   child.dod < mother.dod)
 ORDER BY  name;
 
--- -- Q2 returns (name)
+-- Q2 returns (name)
 
 -- Need to concatenate the monarch name column with the prime minister name column
 SELECT    name
@@ -24,7 +24,7 @@ SELECT    name
 FROM      prime_minister
 ORDER BY  name;
 
--- -- Q3 returns (name)
+-- Q3 returns (name)
 
 SELECT DISTINCT old.name
                   -- Get each monarch with their date of death
@@ -38,7 +38,7 @@ ON        new.accession > old.accession
 WHERE     new.accession < old.dod
 ORDER BY  name;
 
--- -- Q4 returns (house,name,accession)
+-- Q4 returns (house,name,accession)
 
 SELECT    house,name,accession
 FROM      monarch
@@ -49,7 +49,7 @@ WHERE     accession <= ALL (SELECT new.accession
 AND       house IS NOT NULL
 ORDER BY  accession;
 
--- -- Q5 returns (first_name,popularity)
+-- Q5 returns (first_name,popularity)
 
 SELECT    first_name, COUNT(first_name) AS popularity
 FROM      (SELECT   CASE
@@ -66,7 +66,7 @@ GROUP BY  first_name
 HAVING    COUNT(first_name) > 1
 ORDER BY  popularity DESC, first_name;
 
--- -- Q6 returns (house,seventeenth,eighteenth,nineteenth,twentieth)
+-- Q6 returns (house,seventeenth,eighteenth,nineteenth,twentieth)
 
 SELECT      house,
             -- Simply look for year patterns (cast to text format) matching the corresponding century
