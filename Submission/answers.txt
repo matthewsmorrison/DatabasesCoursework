@@ -1,0 +1,202 @@
+     name      |   father   |      mother       
+---------------+------------+-------------------
+ Albert Victor | Edward VII | Alexandra (Queen)
+(1 row)
+
+           name           
+--------------------------
+ Alec Douglas-Home
+ Andrew Bonar Law
+ Anne
+ Anthony Eden
+ Arthur Balfour
+ Benjamin Disraeli
+ Charles I
+ Charles II
+ Clement Attlee
+ David Cameron
+ David Lloyd George
+ Earl of Rosebery
+ Edward Heath
+ Edward VII
+ Edward VIII
+ Elizabeth II
+ George I
+ George II
+ George III
+ George IV
+ George V
+ George VI
+ Gordon Brown
+ Harold Macmillan
+ Harold Wilson
+ Henry Campbell-Bannerman
+ Herbert Henry Asquith
+ James Callaghan
+ James I
+ James II
+ John Major
+ Lord Salisbury
+ Margaret Thatcher
+ Mary II
+ Neville Chamberlain
+ Ramsay MacDonald
+ Stanley Baldwin
+ Tony Blair
+ Victoria
+ William Ewart Gladstone
+ William III
+ William IV
+ Winston Churchill
+(43 rows)
+
+    name     
+-------------
+ Edward VIII
+ James II
+(2 rows)
+
+  house  |    name    | accession  
+---------+------------+------------
+ Stuart  | James I    | 1603-03-24
+ Hanover | George I   | 1714-08-01
+ Windsor | Edward VII | 1901-01-22
+(3 rows)
+
+ first_name | popularity 
+------------+------------
+ George     |          7
+ Edward     |          5
+ William    |          5
+ Alice      |          3
+ Andrew     |          3
+ Anne       |          3
+ Charles    |          3
+ Elizabeth  |          3
+ James      |          3
+ Mary       |          3
+ Albert     |          2
+ David      |          2
+ Frederick  |          2
+ Harold     |          2
+ Henry      |          2
+ Margaret   |          2
+ Victoria   |          2
+(17 rows)
+
+  house  | seventeeth | eighteenth | nineteenth | twentieth 
+---------+------------+------------+------------+-----------
+ Hanover |          0 |          3 |          3 |         0
+ Stuart  |          6 |          1 |          0 |         0
+ Windsor |          0 |          0 |          0 |         5
+(3 rows)
+
+          father          |           child           | born 
+--------------------------+---------------------------+------
+ Albert                   | Victoria (Princess Royal) |    1
+ Albert                   | Edward VII                |    2
+ Albert                   | Alice (Princess)          |    3
+ Albert                   | Alfred                    |    4
+ Albert Victor            |                           |     
+ Alec Douglas-Home        |                           |     
+ Alfred                   |                           |     
+ Andrew                   |                           |     
+ Andrew Bonar Law         |                           |     
+ Andrew of Greece         | Philip                    |    1
+ Anthony Eden             |                           |     
+ Arthur Balfour           |                           |     
+ Benjamin Disraeli        |                           |     
+ Charles                  | William                   |    1
+ Charles                  | Henry                     |    2
+ Charles I                | Charles II                |    1
+ Charles I                | Mary (Princess Royal)     |    2
+ Charles I                | James II                  |    3
+ Charles II               |                           |     
+ Clement Attlee           |                           |     
+ Constantine I of Greece  |                           |     
+ David Cameron            |                           |     
+ David Lloyd George       |                           |     
+ Earl of Rosebery         |                           |     
+ Edward                   |                           |     
+ Edward Heath             |                           |     
+ Edward (Prince)          | Victoria                  |    1
+ Edward VII               | Albert Victor             |    1
+ Edward VII               | George V                  |    2
+ Edward VII               | Alice (Princess Royal)    |    3
+ Edward VIII              |                           |     
+ Ernest Augustus          | George I                  |    1
+ Frederick                | George III                |    1
+ Frederick (Prince)       |                           |     
+ George I                 | George II                 |    1
+ George II                | Frederick                 |    1
+ George III               | Frederick (Prince)        |    1
+ George III               | George IV                 |    2
+ George III               | William IV                |    2
+ George III               | Edward (Prince)           |    4
+ George I of Greece       | Constantine I of Greece   |    1
+ George I of Greece       | Andrew of Greece          |    2
+ George IV                |                           |     
+ George V                 | Edward VIII               |    1
+ George V                 | George VI                 |    2
+ George VI                | Elizabeth II              |    1
+ George VI                | Margaret                  |    2
+ Gordon Brown             |                           |     
+ Harold Macmillan         |                           |     
+ Harold Wilson            |                           |     
+ Henry                    |                           |     
+ Henry Campbell-Bannerman |                           |     
+ Herbert Henry Asquith    |                           |     
+ James Callaghan          |                           |     
+ James I                  | Elizabeth of Bohemia      |    1
+ James I                  | Charles I                 |    2
+ James II                 | Mary II                   |    1
+ James II                 | Anne                      |    2
+ John Major               |                           |     
+ Lord Salisbury           |                           |     
+ Neville Chamberlain      |                           |     
+ Oliver Cromwell          | Richard Cromwell          |    1
+ Philip                   | Charles                   |    1
+ Philip                   | Anne (Princess)           |    2
+ Philip                   | Andrew                    |    3
+ Philip                   | Edward                    |    4
+ Ramsay MacDonald         |                           |     
+ Richard Cromwell         |                           |     
+ Stanley Baldwin          |                           |     
+ Tony Blair               |                           |     
+ William                  |                           |     
+ William Ewart Gladstone  |                           |     
+ William III              |                           |     
+ William II of Orange     | William III               |    1
+ William IV               |                           |     
+ Winston Churchill        |                           |     
+(76 rows)
+
+   monarch    |      prime_minister      
+--------------+--------------------------
+ Edward VII   | Arthur Balfour
+ Edward VII   | Henry Campbell-Bannerman
+ Edward VII   | Herbert Henry Asquith
+ Elizabeth II | Alec Douglas-Home
+ Elizabeth II | Anthony Eden
+ Elizabeth II | David Cameron
+ Elizabeth II | Edward Heath
+ Elizabeth II | Gordon Brown
+ Elizabeth II | Harold Macmillan
+ Elizabeth II | Harold Wilson
+ Elizabeth II | James Callaghan
+ Elizabeth II | John Major
+ Elizabeth II | Margaret Thatcher
+ Elizabeth II | Tony Blair
+ George V     | Andrew Bonar Law
+ George V     | David Lloyd George
+ George V     | Ramsay MacDonald
+ George V     | Stanley Baldwin
+ George VI    | Clement Attlee
+ George VI    | Neville Chamberlain
+ George VI    | Winston Churchill
+ Victoria     | Benjamin Disraeli
+ Victoria     | Earl of Rosebery
+ Victoria     | Lord Salisbury
+ Victoria     | William Ewart Gladstone
+(25 rows)
+
