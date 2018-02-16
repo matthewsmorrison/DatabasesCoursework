@@ -15,7 +15,7 @@ ORDER BY  name;
 
 -- -- Q2 returns (name)
 
--- Simply need to concatenate the monarch name column with the prime minister name column
+-- Need to concatenate the monarch name column with the prime minister name column
 SELECT    name
 FROM      monarch
 WHERE     house IS NOT NULL
@@ -27,10 +27,14 @@ ORDER BY  name;
 -- -- Q3 returns (name)
 
 SELECT DISTINCT old.name
+                  -- Get each monarch with their date of death
 FROM            ( SELECT   person.name,monarch.house,person.dod,monarch.accession
                   FROM     person JOIN monarch
+                  -- Join this with all monarchs and their date of accession
                   ON       person.name = monarch.name) AS old JOIN monarch AS new
 ON        new.accession > old.accession
+-- This allows you to find any accession date (other than the current monarch)
+-- that is less than the date of death.
 WHERE     new.accession < old.dod
 ORDER BY  name;
 
