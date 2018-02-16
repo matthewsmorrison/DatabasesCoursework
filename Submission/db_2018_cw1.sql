@@ -15,6 +15,7 @@ ORDER BY  name;
 
 -- -- Q2 returns (name)
 
+-- Simply need to concatenate the monarch name column with the prime minister name column
 SELECT    name
 FROM      monarch
 WHERE     house IS NOT NULL
