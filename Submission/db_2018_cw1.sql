@@ -47,7 +47,7 @@ ORDER BY  accession;
 
 SELECT    first_name, COUNT(first_name) AS popularity
 FROM      (SELECT   CASE
-                    WHEN      LENGTH(SUBSTRING(name FROM 1 FOR POSITION(' ' IN name) - 1)) = 0
+                    WHEN      LENGTH(SUBSTRING(name FROM 1 FOR POSITION(' ' IN name))) = 0
                     THEN      name
                     ELSE      SUBSTRING(name FROM 1 FOR POSITION(' ' IN name) - 1)
                     END AS    first_name
