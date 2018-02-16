@@ -71,7 +71,7 @@ ORDER BY  popularity DESC, first_name;
 SELECT      house,
             -- Simply look for year patterns (cast to text format) matching the corresponding century
             -- Use '%' to match any number (including zero) of characters
-            COUNT(CASE WHEN accession::TEXT LIKE '16%' then accession END) AS seventeeth,
+            COUNT(CASE WHEN accession::TEXT LIKE '16%' then accession END) AS seventeenth,
             COUNT(CASE WHEN accession::TEXT LIKE '17%' then accession END) AS eighteenth,
             COUNT(CASE WHEN accession::TEXT LIKE '18%' then accession END) AS nineteenth,
             COUNT(CASE WHEN accession::TEXT LIKE '19%' then accession END) AS twentieth
