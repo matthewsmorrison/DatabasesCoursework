@@ -84,11 +84,11 @@
  Victoria   |          2
 (17 rows)
 
-  house  | seventeeth | eighteenth | nineteenth | twentieth 
----------+------------+------------+------------+-----------
- Hanover |          0 |          3 |          3 |         0
- Stuart  |          6 |          1 |          0 |         0
- Windsor |          0 |          0 |          0 |         5
+  house  | seventeenth | eighteenth | nineteenth | twentieth 
+---------+-------------+------------+------------+-----------
+ Hanover |           0 |          3 |          3 |         0
+ Stuart  |           6 |          1 |          0 |         0
+ Windsor |           0 |          0 |          0 |         5
 (3 rows)
 
           father          |           child           | born 
